@@ -9,9 +9,8 @@ html
   body[class=page_class]
     nav.navbar.navbar-expand-sm.navbar-light.bg-light
       a.navbar-brand[href="/"] Cher
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"]
+        span.navbar-toggler-icon
       .collapse.navbar-collapse#navbarNavAltMarkup
         .navbar-nav.mr-auto
           a.nav-item.nav-link.px-2[href='#'] Home
@@ -20,4 +19,5 @@ html
 
     .container
       = flash_messages
-      = yield
+      .py-4
+        = yield
