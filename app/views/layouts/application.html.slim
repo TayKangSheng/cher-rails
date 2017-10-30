@@ -7,6 +7,17 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body[class=page_class]
+    nav.navbar.navbar-expand-sm.navbar-light.bg-light
+      a.navbar-brand[href="/"] Cher
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      .collapse.navbar-collapse#navbarNavAltMarkup
+        .navbar-nav.mr-auto
+          a.nav-item.nav-link.px-2[href='#'] Home
+        .navbar-nav
+          a.nav-item.nav-link.px-2[href='#'] Login
+
     .container
       = flash_messages
       = yield
