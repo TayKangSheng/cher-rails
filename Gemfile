@@ -12,8 +12,10 @@ gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.4"
 gem "turbolinks", "~> 5"
 
+# html, css and js
 gem "bootstrap", "~> 4.0.0.beta2.1"
 gem "jquery-rails"
+gem "rails_utils"
 gem "sass-rails", "~> 5.0"
 gem "slim-rails"
 gem "uglifier", ">= 1.3.0"
