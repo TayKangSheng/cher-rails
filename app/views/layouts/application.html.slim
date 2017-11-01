@@ -15,9 +15,22 @@ html
         .navbar-nav.mr-auto
           a.nav-item.nav-link.px-2[href='#'] Home
         .navbar-nav
-          a.nav-item.nav-link.px-2[href='#'] Login
+          - if current_user
+            = link_to "Logout", destroy_user_session_path, :method => 'delete', class: 'nav-item nav-link px-2'
+          - else
+            = link_to "Login", new_user_session_path, class: 'nav-item nav-link px-2'
 
     .container
-      = flash_messages
-      .py-4
+      .py-2
+        - if notice
+          div.alert.alert-info.alert-dismissible.fade.show[role="alert"]
+            = notice
+            button.close[type="button" data-dismiss="alert" aria-label="Close"]
+              span[aria-hidden="true"] &times;
+        - if alert
+          div.alert.alert-warning.alert-dismissible.fade.show[role="alert"]
+            = alert
+            button.close[type="button" data-dismiss="alert" aria-label="Close"]
+              span[aria-hidden="true"] &times;
+
         = yield
