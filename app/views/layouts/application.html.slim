@@ -7,7 +7,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body[class=page_class]
-    nav.navbar.navbar-expand-sm.navbar-light.bg-light
+    nav.navbar.navbar-expand-sm.navbar-light.bg-light.px-4
       a.navbar-brand[href="/"] Cher
       button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"]
         span.navbar-toggler-icon
@@ -16,7 +16,12 @@ html
           a.nav-item.nav-link.px-2[href='#'] Home
         .navbar-nav
           - if current_user
-            = link_to "Logout", destroy_user_session_path, :method => 'delete', class: 'nav-item nav-link px-2'
+            .nav-item.dropdown
+              a.nav-item.nav-link.dropdown-toggle.mr-md-2[href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"]
+                ' v4.0
+              .dropdown-menu.dropdown-menu-right[aria-labelledby="bd-versions"]
+                = link_to "Edit", edit_user_registration_path, class: 'dropdown-item'
+                = link_to "Logout", destroy_user_session_path, :method => 'delete', class: 'dropdown-item'
           - else
             = link_to "Login", new_user_session_path, class: 'nav-item nav-link px-2'
 
