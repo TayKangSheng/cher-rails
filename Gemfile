@@ -20,9 +20,12 @@ gem "sass-rails", "~> 5.0"
 gem "slim-rails"
 gem "uglifier", ">= 1.3.0"
 
-gem "bcrypt", "~> 3.1.7"
+# features
 gem "devise"
+gem "rolify"
 
+# Utilities
+gem "bcrypt", "~> 3.1.7"
 gem "simple_form"
 
 group :development do
