@@ -20,9 +20,12 @@ gem "sass-rails", "~> 5.0"
 gem "slim-rails"
 gem "uglifier", ">= 1.3.0"
 
-gem "bcrypt", "~> 3.1.7"
+# features
 gem "devise"
+gem "rolify"
 
+# Utilities
+gem "bcrypt", "~> 3.1.7"
 gem "simple_form"
 
 group :development do
@@ -40,6 +43,7 @@ end
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
 
+  gem "factory_bot_rails", "~> 4.0"
   gem "rspec-rails"
   gem "shoulda-matchers", "~> 3.1"
 
