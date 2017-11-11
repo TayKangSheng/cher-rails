@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: cher-rails_production
-  username: cher-rails
-  password: <%= ENV['CHER-RAILS_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
