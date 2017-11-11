@@ -1,7 +1,15 @@
 language: ruby
 rvm:
-  - 2.4.2
+- 2.4.2
 services:
-  - postgresql
+- postgresql
 before_script:
-  - psql -c 'create database "cher-rails_test";' -U postgres
+- psql -c 'create database "cher-rails_test";' -U postgres
+deploy:
+  provider: heroku
+  app:
+    master: cher-staging
+  api_key:
+    secure: NF2suoN+m2Y1F9F3fUpKcGFOYJwSaP1qfAmY97gkAgsyF5l8TKkP9K5JAyB9PEtuDhS2L3sA1dkzMbyCKVSEUs0Uc3VD1iW3kGpKXW6fR8XtYRBvcphFmlXKYigZFpq/fdbQD+E+A338b7mb2YqA6qK+B4mIW5Hh/U0R+U5Ze0/uYM8aE7Q3aLpt92fW+VzvvIp759aDD+PfoEi9t0qwDEFXY3n54nQkZQPE9biDUnoM07o5TgmHRk6aUmNKkdVfmMy/z28Z4mLngsPr76H07te2FqqWUEo+oulzeBmz+4ypHSMte8ZbwA5w8OboiJpg3iwXOj1uyaFQ7O6EgPg7DilYr3xbKpDxiu7F9xSjJ4ckDt2oM5Fo5y+9tHmVqO5zNoXko9M99IH7cGwlOX9L8+107aH1qmg8R2qUiYvwPJjPUpW6FrL7Hd2FI2kaQp7rcczidFPVzYH7C31C3bEZnIRNa6OaXCjER4Jp1OvHf9uRkJCVximDcxEWWvICak3ma9Mdo4Snb37K+IDag5ZkrqmYReDr/ecT9IWXU9cbJPSDJC0hMAgQqNMViHUb7zB373i7dNscTH1krG4IyaTlZPCwSm3mmpNQQiyeazf7bXPO7Ggw7eBi1WHAqcHjkcDzi8rpT5CcCoLrZ3G+KJl0JUK1aDh3ygDgfIpOGVH3/hw=
+  run:
+    - "rake db:migrate"
