@@ -20,7 +20,8 @@ html
               a.nav-item.nav-link.dropdown-toggle[href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"]
                 ' Options
               .dropdown-menu.dropdown-menu-right[aria-labelledby="bd-versions"]
-                = link_to "Edit", edit_user_registration_path, class: 'dropdown-item'
+                = link_to "My Account", admin_user_path(current_user), class: 'dropdown-item'
+                = link_to "Manage Users", admin_users_path, class: 'dropdown-item' if current_user.has_role? :admin
                 = link_to "Logout", destroy_user_session_path, :method => 'delete', class: 'dropdown-item'
           - else
             = link_to "Login", new_user_session_path, class: 'nav-item nav-link'
