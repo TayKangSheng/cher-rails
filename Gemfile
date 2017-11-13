@@ -43,6 +43,9 @@ end
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
 
+  gem "database_rewinder"
+  gem "faker", :git => "git://github.com/stympy/faker.git", :branch => "master"
+
   gem "factory_bot_rails", "~> 4.0"
   gem "rspec-rails"
   gem "shoulda-matchers", "~> 3.1"
