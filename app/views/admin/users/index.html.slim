@@ -1,0 +1,21 @@
+h1
+  ' All Users
+  = link_to 'New User', new_admin_user_path, class: 'btn btn-light', style: "float: right;"
+
+table.table.table-striped
+  thead
+    tr
+      th[scoped='col'] id
+      th[scoped='col'] email
+      th[scoped='col']
+      th[scoped='col']
+      th[scoped='col']
+
+  tbody
+    - @users.each do |user|
+      tr
+        th = user.id
+        td = user.email
+        td = link_to 'Show', admin_user_path(user)
+        td = link_to 'Edit', edit_admin_user_path(user)
+        td = link_to 'Destroy', admin_user_path(user), data: { confirm: 'Are you sure?' }, method: :delete
