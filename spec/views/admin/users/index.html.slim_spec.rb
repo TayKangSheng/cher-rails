@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe "admin/users/index", type: :view do
   before(:each) do
-    assign(:admin_users, [
-      Admin::User.create!(),
-      Admin::User.create!()
+    assign(:users, [
+      create(:user),
+      create(:user)
     ])
   end
 
