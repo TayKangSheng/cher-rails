@@ -14,6 +14,7 @@ gem "turbolinks", "~> 5"
 
 # html, css and js
 gem "bootstrap", "~> 4.0.0.beta2.1"
+gem "font-awesome-rails"
 gem "jquery-rails"
 gem "rails_utils"
 gem "sass-rails", "~> 5.0"
