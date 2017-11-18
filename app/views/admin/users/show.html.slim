@@ -1,16 +1,17 @@
 p#notice = notice
 
-table
-  thead
-    tr
-      th id
-      th email
+h1 Profile Details
+
+table.table
   tbody
     tr
+      td[style="text-align:right"] ID
       td = @admin_user.id
+    tr
+      td[style="text-align:right"] Email
       td = @admin_user.email
 
 
-=> link_to 'Edit', edit_admin_user_path(@admin_user)
+=> link_to 'Edit', edit_admin_user_path(@admin_user), class: 'btn btn-dark'
 '|
-=< link_to 'Back', admin_users_path
+=< link_to 'Back', admin_users_path, class: 'btn btn-light'
