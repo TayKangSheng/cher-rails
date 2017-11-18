@@ -2,12 +2,13 @@ doctype html
 html
   head
     title CherRails
+    meta[name="viewport" content="width=device-width, initial-scale=1"]
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   body[class=page_class]
-    nav.navbar.navbar-expand-sm.navbar-light.bg-light.px-md-4.
+    nav.navbar.navbar-expand-sm.navbar-light.bg-light.px-md-4
       a.navbar-brand[href="/"] Cher
       button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation"]
         span.navbar-toggler-icon
